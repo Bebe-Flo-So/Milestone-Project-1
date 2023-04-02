@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    background: white;
+}
+.title {
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Rubik Moonrocks', cursive;
+    color: rgb(231, 191, 198);
+}
