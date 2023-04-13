@@ -1,10 +1,60 @@
 * {
+    padding: 0;
     margin: 0;
-    background: white;
+    box-sizing: border-box;
 }
+
+body {
+    height: 100vh;
+    background-color: rgb(180, 107, 216);
+}
+
 .title {
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Roboto Slab', serif;
-    font-family: 'Rubik Moonrocks', cursive;
-    color: rgb(231, 191, 198);
+    font-family: 'Rubik Moonrocks', cursive;;
+    font-size: 70px;
+    }
+
+.sub-title {
+    font-family: cursive ;
+    color: white;
+    font-size: 50px;
 }
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.game-container {
+    height: 640px;
+    width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid white;
+
+}
+
+.cards {
+    position: relative;
+    width: 25%;
+    height: 33.33%;
+    border: 2px solid white;
+
+}
+
+.front-card {
+    border: 2px solid white;
+    position: absolute;
+
+}
+
+.back-card {
+    border: 2px solid;
+    position: absolute;
+
+}
+
+
+
+
+
