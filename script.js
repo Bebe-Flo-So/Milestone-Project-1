@@ -102,8 +102,8 @@ function checkForMatch(){
     chosenCardsIds = [];
     attemptsHolder.textContent = attempts;
     foundHolder.textContent = foundCards;
-    if(foundCards == cardsInGame) {
-        alert('well done')
+    if(foundCards === cardsInGame) {
+        alert('Great Job')
     }
 
 }

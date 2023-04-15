@@ -1,3 +1,20 @@
+body {
+    background-color: rgb(215, 179, 229);
+}
+h1 {
+    font-family:'Rubik Moonrocks', cursive;
+    font-size: 40px;
+    color: rgb(211, 23, 221);
+    text-align: center;
+}
+
+p {
+    font-family:'Gloria Hallelujah', cursive ;
+    color: blueviolet;
+    font-size: 20px;
+    text-align: center;
+
+}
 .pageContainer {
     width: 750px;
     margin: 0 auto;
@@ -8,7 +25,7 @@
     flex-wrap: wrap;
     height: 300px;
     width: 100%;
-    border: 10px solid black;
+    border: 10px double rgb(243, 240, 240);
     
 }
 
