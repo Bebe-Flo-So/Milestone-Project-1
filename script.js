@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
  var attempts = 0;
  var foundCards = 0;
+ attemptsHolder.textContent = attempts;
+ foundHolder.textContent = foundCards;
 
  var chosenCards = [];
  var chosenCardsIds = [];
@@ -68,10 +70,31 @@ document.addEventListener('DOMContentLoaded', () => {
  }
 
  function flipCard(){
+    if(chosenCards.length != 2){
+     var cardid = this.getAttribute('data-id');
+    if(this.getAttribute('src') !='assets/dots.jpg'){
+        chosenCards.push(cardsList[cardId].name);
+        chosenCardsIds.push(cardId);
+        this.setAttribute('src', cardsList[cardId].image);
+        if(chosenCards.length == 2){
+            setTimeout(checkForMatch, 400);
+        }
+    }
 
+}    
+}
+   
+function checkForMatch(){
+    attempts++;
+    var cards = document.querySelectorAll('img');
+    var firstCard = chosenCardsIds[0];
+    var secondCard = chosenCardsIds[1];
+    if(chosenCards[0] ==chosenCards[1]){
+        foundCards++;
+        foundCards[firstCard].setAttribute('src','images')
 
-
- }
+    }
+}
 
  initiateBoard();
  
