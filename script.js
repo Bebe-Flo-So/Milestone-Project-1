@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
- const cardsList = [ =];
+ const cardsList = [
     {
         name: 'bee',
         image: 'assets/bee.jpg'
@@ -43,23 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
  ];
 
+
  cardsList.sort( () => 0.5 - Math.random() );
- 
- const grid = document.querySelector('.game-grid');
- const attemptsHolder = document.querySelector('.attemtsHolder');
+ const grid = document.querySelector('.gameGrid');
+ const attemptsHolder = document.querySelector('.attemptsHolder');
  const foundHolder = document.querySelector('.foundHolder');
  const cardsInGame = 10;
 
- var attempts = 0;
- var foundCards = 0;
+ let attempts = 0;
+ let foundCards = 0;
  attemptsHolder.textContent = attempts;
  foundHolder.textContent = foundCards;
 
- var chosenCards = [];
- var chosenCardsIds = [];
+ let chosenCards = [];
+ let chosenCardsIds = [];
 
  function initiateBoard(){
-    for (var i = 0; i < cardsList.length; i++) {
+    for (let i = 0; i < cardsList.length; i++) {
         var card = document.createElement('img');
         card.setAttribute('src', 'assets/dots.jpg');
         card.setAttribute('data-id', i);
@@ -72,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
  function flipCard(){
     if(chosenCards.length != 2){
      var cardid = this.getAttribute('data-id');
-    if(this.getAttribute('src') !='assets/dots.jpg'){
-        chosenCards.push(cardsList[cardId].name);
-        chosenCardsIds.push(cardId);
-        this.setAttribute('src', cardsList[cardId].image);
+    if(this.getAttribute('src') != 'assets/whitesquares.jpg'){
+        chosenCards.push(cardsList[cardid].name);
+        chosenCardsIds.push(cardid);
+        this.setAttribute('src', cardsList[cardid].image);
         if(chosenCards.length == 2){
             setTimeout(checkForMatch, 400);
         }
@@ -86,14 +86,26 @@ document.addEventListener('DOMContentLoaded', () => {
    
 function checkForMatch(){
     attempts++;
-    var cards = document.querySelectorAll('img');
-    var firstCard = chosenCardsIds[0];
-    var secondCard = chosenCardsIds[1];
-    if(chosenCards[0] ==chosenCards[1]){
+    let cards = document.querySelectorAll('img');
+    let firstCard = chosenCardsIds[0];
+    let secondCard = chosenCardsIds[1];
+    if(chosenCards[0] == chosenCards[1]){
         foundCards++;
-        foundCards[firstCard].setAttribute('src','images')
+        cards[firstCard].setAttribute('src','assets/whitesquare.jpg');
+        cards[secondCard].setAttribute('src', 'assets/whitesquare.jpg');
+    }else{
+        cards[firstCard].setAttribute('src','assets/dots.jpg');
+        cards[secondCard].setAttribute('src', 'assets/dots.jpg');
 
     }
+    chosenCards = [];
+    chosenCardsIds = [];
+    attemptsHolder.textContent = attempts;
+    foundHolder.textContent = foundCards;
+    if(foundCards == cardsInGame) {
+        alert('well done')
+    }
+
 }
 
  initiateBoard();

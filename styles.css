@@ -1,19 +1,21 @@
-.page-container {
+.pageContainer {
     width: 750px;
     margin: 0 auto;
 }
 
-.game-grid {
+.gameGrid {
     display: flex;
     flex-wrap: wrap;
-    height: 600px;
+    height: 300px;
     width: 100%;
-    border: 1px solid black;
+    border: 10px solid black;
+    
 }
 
-.game-grid img {
+.gameGrid img {
     width: 150px;
     height: 150px;
+    
 }
 
 
