@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
  const grid = document.querySelector('.gameGrid');
  const attemptsHolder = document.querySelector('.attemptsHolder');
  const foundHolder = document.querySelector('.foundHolder');
- const cardsInGame = 10;
+ const cardsInGame = 5;
 
  let attempts = 0;
  let foundCards = 0;
@@ -107,6 +107,9 @@ function checkForMatch(){
     }
 
 }
+
+
+
 
  initiateBoard();
  
